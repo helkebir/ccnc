@@ -1,0 +1,780 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="ccnc_8h" kind="file" language="C++">
+    <compoundname>ccnc.h</compoundname>
+    <includes local="no">gpiod.h</includes>
+    <includedby refid="ccnc_8c" local="yes">/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c</includedby>
+    <includedby refid="main_8c" local="yes">/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/main.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h</label>
+        <link refid="ccnc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gpiod.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_motor_pins" prot="public">MotorPins</innerclass>
+    <innerclass refid="struct_motor_g_p_i_o_d" prot="public">MotorGPIOD</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="ccnc_8h_1a6b20d41d6252e9871430c242cb1a56e7" prot="public" static="no">
+        <name>BUFFER_SIZE</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Character buffer size for stdin input. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="17" column="9" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ccnc_8h_1a73c52f3e083ffd8acde0b01f74de7a5a" prot="public" static="no">
+        <name>COMMAND_LENGTH</name>
+        <initializer>3</initializer>
+        <briefdescription>
+<para>Number of subcommands in a command. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Normally equals number of controlled motors. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="24" column="9" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" prot="public" static="no">
+        <type>unsigned int</type>
+        <definition>typedef unsigned int uint</definition>
+        <argsstring></argsstring>
+        <name>uint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Shorthand for unsigned integer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="27" column="22" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ccnc_8h_1a1ab814c18383f3c971253e396e663fb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initMotor</definition>
+        <argsstring>(struct MotorPins *motorPins, struct MotorGPIOD *motorGPIOD, struct gpiod_chip *chip)</argsstring>
+        <name>initMotor</name>
+        <param>
+          <type>struct <ref refid="struct_motor_pins" kindref="compound">MotorPins</ref> *</type>
+          <declname>motorPins</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> *</type>
+          <declname>motorGPIOD</declname>
+        </param>
+        <param>
+          <type>struct gpiod_chip *</type>
+          <declname>chip</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a A4988-style motor driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calls GPIOD and request pin output access as the &quot;cnccontroller&quot; consumer. Initial pin values are set to low.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motorPins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Motor driver GPIO pins. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motorGPIOD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uninitialized pointer to a <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> instance that is to be populated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>chip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the GPIOD chip. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="67" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="3" bodyend="25" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="67" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1afcce7d1521597fe033e70a6c07df0df5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void releaseMotor</definition>
+        <argsstring>(struct MotorGPIOD *motorGPIOD)</argsstring>
+        <name>releaseMotor</name>
+        <param>
+          <type>struct <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> *</type>
+          <declname>motorGPIOD</declname>
+        </param>
+        <briefdescription>
+<para>Safety releases all GPIOD connections for a given motor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>motorGPIOD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> instance to be released. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="75" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="27" bodyend="34" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="75" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1ab063ff83fc42816c13dd0b4b2da75a7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prepareSubcommand</definition>
+        <argsstring>(uint scmd, struct MotorGPIOD *motorGPIOD)</argsstring>
+        <name>prepareSubcommand</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>scmd</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> *</type>
+          <declname>motorGPIOD</declname>
+        </param>
+        <briefdescription>
+<para>Prepares pin states for a subcommand. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A subcommand is a 5-bit value with the following build-up:</para>
+<para><table rows="6" cols="3"><row>
+<entry thead="yes" align='left'><para>Address (LE) </para>
+</entry><entry thead="yes" align='left'><para>Abbreviation </para>
+</entry><entry thead="yes" align='left'><para>Meaning  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para>0 </para>
+</entry><entry thead="no" align='left'><para>MS3 </para>
+</entry><entry thead="no" align='left'><para>Microstep 3  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para>1 </para>
+</entry><entry thead="no" align='left'><para>MS2 </para>
+</entry><entry thead="no" align='left'><para>Microstep 2  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para>2 </para>
+</entry><entry thead="no" align='left'><para>MS1 </para>
+</entry><entry thead="no" align='left'><para>Microstep 1  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para>3 </para>
+</entry><entry thead="no" align='left'><para>DIR </para>
+</entry><entry thead="no" align='left'><para>Direction  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para>4 </para>
+</entry><entry thead="no" align='left'><para>ENA </para>
+</entry><entry thead="no" align='left'><para>Enable  </para>
+</entry></row>
+</table>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 5-bit subcommand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motorGPIOD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="93" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="36" bodyend="62" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="93" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1aa2c424555e60105489ba1a88bff35d8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void executeSubcommand</definition>
+        <argsstring>(uint scmd, struct MotorGPIOD *motorGPIOD, uint wait)</argsstring>
+        <name>executeSubcommand</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>scmd</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> *</type>
+          <declname>motorGPIOD</declname>
+        </param>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>wait</declname>
+        </param>
+        <briefdescription>
+<para>Executes a subcommand with a specified wait time between step pin high and low. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="ccnc_8h_1ab063ff83fc42816c13dd0b4b2da75a7c" kindref="member">prepareSubcommand</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 5-bit subcommand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motorGPIOD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wait time in microseconds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="105" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="64" bodyend="77" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="105" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1aadbb53306b223d75b33eb606f05819ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void executeSubcommandsOnMotors</definition>
+        <argsstring>(uint scmds[], struct MotorGPIOD *motorGPIODs[], uint wait, uint number)</argsstring>
+        <name>executeSubcommandsOnMotors</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>scmds</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>struct <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> *</type>
+          <declname>motorGPIODs</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>wait</declname>
+        </param>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>number</declname>
+        </param>
+        <briefdescription>
+<para>Executes multiple subcommands on multiple motors (one per motor). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="ccnc_8h_1aa2c424555e60105489ba1a88bff35d8f" kindref="member">executeSubcommand</ref></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scmds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of 5-bit subcommands. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motorGPIODs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of pointers to <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> instances. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wait time in microseconds. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of motors to be commanded. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="117" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="79" bodyend="103" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="117" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1a77e8fa224b5fb18b4b2334f49d607a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void runScmd</definition>
+        <argsstring>(uint scmd, uint wait, struct gpiod_line *stp, struct gpiod_line *dir, struct gpiod_line *ms1, struct gpiod_line *ms2, struct gpiod_line *ms3)</argsstring>
+        <name>runScmd</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>scmd</declname>
+        </param>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>wait</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>stp</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>ms1</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>ms2</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>ms3</declname>
+        </param>
+        <briefdescription>
+<para>Execute a subcommand by manually supplying GPIOD lines. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Superceded by <ref refid="ccnc_8h_1aa2c424555e60105489ba1a88bff35d8f" kindref="member">executeSubcommand()</ref>. </para>
+</xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 5-bit subcommand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wait time in microseconds. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the STP gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the DIR gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ms1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the MS1 gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ms2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the MS2 gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ms3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the MS3 gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="132" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="105" bodyend="121" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="132" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1ad81d88ec29f019dcfc23c8cbb989ed1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void runScmdFromArray</definition>
+        <argsstring>(uint scmd[5], uint wait, struct gpiod_line *stp, struct gpiod_line *dir, struct gpiod_line *ms1, struct gpiod_line *ms2, struct gpiod_line *ms3)</argsstring>
+        <name>runScmdFromArray</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>scmd</declname>
+          <array>[5]</array>
+        </param>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>wait</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>stp</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>ms1</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>ms2</declname>
+        </param>
+        <param>
+          <type>struct gpiod_line *</type>
+          <declname>ms3</declname>
+        </param>
+        <briefdescription>
+<para>Execute a subcommand from an array by manually supplying GPIOD lines. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Superceded by <ref refid="ccnc_8h_1aadbb53306b223d75b33eb606f05819ed" kindref="member">executeSubcommandsOnMotors()</ref>. </para>
+</xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of five integers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wait time in microseconds. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the STP gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the DIR gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ms1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the MS1 gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ms2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the MS2 gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ms3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the MS3 gpiod_line. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="148" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="123" bodyend="138" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="148" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1a132245808027c6679bf46c61f802a0a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+        <definition>uint parity</definition>
+        <argsstring>(uint i)</argsstring>
+        <name>parity</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Computes integer parity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If even returns 1, 0 otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Parity. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="161" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="140" bodyend="143" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="161" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1ada81bdeec91ff5f283e886401f9c9887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+        <definition>uint addParityBit</definition>
+        <argsstring>(uint i)</argsstring>
+        <name>addParityBit</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Prepends parity bit to an integer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Parity bit is added at address 0 (LE).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Integer with prepended parity bit. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="172" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="145" bodyend="148" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="172" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1ad249f9a8cb431cc966c2f71f124b0633" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool checkParity</definition>
+        <argsstring>(uint i, uint parityBit)</argsstring>
+        <name>checkParity</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>parityBit</declname>
+        </param>
+        <briefdescription>
+<para>Checks if parity bit is properly set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer to be checked. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parityBit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Supposed parity bit.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if parity matches parity bit, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="182" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="150" bodyend="153" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="182" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1ad0c15d03fbe73823faf9876e480b3271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+        <definition>uint concatenateSubcommands</definition>
+        <argsstring>(uint scmd0, uint scmd1)</argsstring>
+        <name>concatenateSubcommands</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>scmd0</declname>
+        </param>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>scmd1</declname>
+        </param>
+        <briefdescription>
+<para>Concatenates two subcommands. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scmd0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First subcommand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scmd1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second subcommand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Concatenated subcommands. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="192" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="155" bodyend="158" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="192" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1a4802f908d12718480e865c9f0ed67db2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+        <definition>uint* deconstructCommand</definition>
+        <argsstring>(uint cmd)</argsstring>
+        <name>deconstructCommand</name>
+        <param>
+          <type><ref refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+<para>Deconstructs command. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command to be deconstructed.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array of length <ref refid="ccnc_8h_1a73c52f3e083ffd8acde0b01f74de7a5a" kindref="member">COMMAND_LENGTH</ref> containing all consituent subcommands. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="202" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="160" bodyend="169" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="202" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="ccnc_8h_1aee9a6cc3c441673a8c0d73eae36d7128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void demoMotors</definition>
+        <argsstring>(struct MotorGPIOD *xMotor, struct MotorGPIOD *yMotor, struct MotorGPIOD *zMotor)</argsstring>
+        <name>demoMotors</name>
+        <param>
+          <type>struct <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> *</type>
+          <declname>xMotor</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> *</type>
+          <declname>yMotor</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> *</type>
+          <declname>zMotor</declname>
+        </param>
+        <briefdescription>
+<para>A small motor demo. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xMotor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the x-axis <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yMotor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the y-axis <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zMotor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the z-axis <ref refid="struct_motor_g_p_i_o_d" kindref="compound">MotorGPIOD</ref> instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="211" column="6" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.c" bodystart="171" bodyend="253" declfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" declline="211" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Main CCNC functions. </para>
+    </detaileddescription>
+    <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.18">
+  <compound refid="struct_motor_g_p_i_o_d" kind="struct"><name>MotorGPIOD</name>
+    <member refid="struct_motor_g_p_i_o_d_1a753b056c02eede2971427727d5889ef5" kind="variable"><name>stp</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1a860138758afb1dd248c2b34f252d99bb" kind="variable"><name>dir</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1adf3d20f609fa9cd433d06f9e90480216" kind="variable"><name>ms1</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1a4bd8b32e7f01a5b5e475673f61a42a1c" kind="variable"><name>ms2</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1a941998517a563ddd07379d25965a53e9" kind="variable"><name>ms3</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1a78b1a39f8f4b6ea5ec7e9590a6acd1b5" kind="variable"><name>stpState</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1a493619e15c49fb53d12f56d75980bb6d" kind="variable"><name>dirState</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1ac3cdccf7cb5feeb1aef2c1580898fc76" kind="variable"><name>ms1State</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1a7ffba22b1094dd9d03b9d9b339131482" kind="variable"><name>ms2State</name></member>
+    <member refid="struct_motor_g_p_i_o_d_1a6457ec87db3a012d6286bfab5bbf09e5" kind="variable"><name>ms3State</name></member>
+  </compound>
+  <compound refid="struct_motor_pins" kind="struct"><name>MotorPins</name>
+    <member refid="struct_motor_pins_1a6a0d026dc2ac7ca7da9a5a0eb0f41419" kind="variable"><name>stp</name></member>
+    <member refid="struct_motor_pins_1a52f3cb18fdc2b7a19013d0200944d6a6" kind="variable"><name>dir</name></member>
+    <member refid="struct_motor_pins_1a2af1dd80e916096e505ef084eed1f232" kind="variable"><name>ms1</name></member>
+    <member refid="struct_motor_pins_1a1c9d2f000a471044c43207bfcb81e275" kind="variable"><name>ms2</name></member>
+    <member refid="struct_motor_pins_1abcfcb5a41ae7bdf4d19c054ce986d3d8" kind="variable"><name>ms3</name></member>
+  </compound>
+  <compound refid="namespaceconf" kind="namespace"><name>conf</name>
+  </compound>
+  <compound refid="ccnc_8c" kind="file"><name>ccnc.c</name>
+    <member refid="ccnc_8c_1a1ab814c18383f3c971253e396e663fb7" kind="function"><name>initMotor</name></member>
+    <member refid="ccnc_8c_1afcce7d1521597fe033e70a6c07df0df5" kind="function"><name>releaseMotor</name></member>
+    <member refid="ccnc_8c_1ab063ff83fc42816c13dd0b4b2da75a7c" kind="function"><name>prepareSubcommand</name></member>
+    <member refid="ccnc_8c_1aa2c424555e60105489ba1a88bff35d8f" kind="function"><name>executeSubcommand</name></member>
+    <member refid="ccnc_8c_1aadbb53306b223d75b33eb606f05819ed" kind="function"><name>executeSubcommandsOnMotors</name></member>
+    <member refid="ccnc_8c_1a77e8fa224b5fb18b4b2334f49d607a8e" kind="function"><name>runScmd</name></member>
+    <member refid="ccnc_8c_1ad81d88ec29f019dcfc23c8cbb989ed1e" kind="function"><name>runScmdFromArray</name></member>
+    <member refid="ccnc_8c_1a132245808027c6679bf46c61f802a0a3" kind="function"><name>parity</name></member>
+    <member refid="ccnc_8c_1ada81bdeec91ff5f283e886401f9c9887" kind="function"><name>addParityBit</name></member>
+    <member refid="ccnc_8c_1ad249f9a8cb431cc966c2f71f124b0633" kind="function"><name>checkParity</name></member>
+    <member refid="ccnc_8c_1ad0c15d03fbe73823faf9876e480b3271" kind="function"><name>concatenateSubcommands</name></member>
+    <member refid="ccnc_8c_1a4802f908d12718480e865c9f0ed67db2" kind="function"><name>deconstructCommand</name></member>
+    <member refid="ccnc_8c_1aee9a6cc3c441673a8c0d73eae36d7128" kind="function"><name>demoMotors</name></member>
+  </compound>
+  <compound refid="ccnc_8h" kind="file"><name>ccnc.h</name>
+    <member refid="ccnc_8h_1a6b20d41d6252e9871430c242cb1a56e7" kind="define"><name>BUFFER_SIZE</name></member>
+    <member refid="ccnc_8h_1a73c52f3e083ffd8acde0b01f74de7a5a" kind="define"><name>COMMAND_LENGTH</name></member>
+    <member refid="ccnc_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kind="typedef"><name>uint</name></member>
+    <member refid="ccnc_8h_1a1ab814c18383f3c971253e396e663fb7" kind="function"><name>initMotor</name></member>
+    <member refid="ccnc_8h_1afcce7d1521597fe033e70a6c07df0df5" kind="function"><name>releaseMotor</name></member>
+    <member refid="ccnc_8h_1ab063ff83fc42816c13dd0b4b2da75a7c" kind="function"><name>prepareSubcommand</name></member>
+    <member refid="ccnc_8h_1aa2c424555e60105489ba1a88bff35d8f" kind="function"><name>executeSubcommand</name></member>
+    <member refid="ccnc_8h_1aadbb53306b223d75b33eb606f05819ed" kind="function"><name>executeSubcommandsOnMotors</name></member>
+    <member refid="ccnc_8h_1a77e8fa224b5fb18b4b2334f49d607a8e" kind="function"><name>runScmd</name></member>
+    <member refid="ccnc_8h_1ad81d88ec29f019dcfc23c8cbb989ed1e" kind="function"><name>runScmdFromArray</name></member>
+    <member refid="ccnc_8h_1a132245808027c6679bf46c61f802a0a3" kind="function"><name>parity</name></member>
+    <member refid="ccnc_8h_1ada81bdeec91ff5f283e886401f9c9887" kind="function"><name>addParityBit</name></member>
+    <member refid="ccnc_8h_1ad249f9a8cb431cc966c2f71f124b0633" kind="function"><name>checkParity</name></member>
+    <member refid="ccnc_8h_1ad0c15d03fbe73823faf9876e480b3271" kind="function"><name>concatenateSubcommands</name></member>
+    <member refid="ccnc_8h_1a4802f908d12718480e865c9f0ed67db2" kind="function"><name>deconstructCommand</name></member>
+    <member refid="ccnc_8h_1aee9a6cc3c441673a8c0d73eae36d7128" kind="function"><name>demoMotors</name></member>
+  </compound>
+  <compound refid="conf_8py" kind="file"><name>conf.py</name>
+  </compound>
+  <compound refid="mainpage_8dox" kind="file"><name>mainpage.dox</name>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="deprecated" kind="page"><name>deprecated</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

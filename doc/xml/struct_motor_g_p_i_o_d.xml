@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="struct_motor_g_p_i_o_d" kind="struct" language="C++" prot="public">
+    <compoundname>MotorGPIOD</compoundname>
+    <includes refid="ccnc_8h" local="no">ccnc.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1a753b056c02eede2971427727d5889ef5" prot="public" static="no" mutable="no">
+        <type>struct gpiod_line *</type>
+        <definition>struct gpiod_line* MotorGPIOD::stp</definition>
+        <argsstring></argsstring>
+        <name>stp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>STP gpiod_line </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="44" column="21" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1a860138758afb1dd248c2b34f252d99bb" prot="public" static="no" mutable="no">
+        <type>struct gpiod_line *</type>
+        <definition>struct gpiod_line* MotorGPIOD::dir</definition>
+        <argsstring></argsstring>
+        <name>dir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DIR gpiod_line </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="45" column="21" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1adf3d20f609fa9cd433d06f9e90480216" prot="public" static="no" mutable="no">
+        <type>struct gpiod_line *</type>
+        <definition>struct gpiod_line* MotorGPIOD::ms1</definition>
+        <argsstring></argsstring>
+        <name>ms1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MS1 gpiod_line </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="46" column="21" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1a4bd8b32e7f01a5b5e475673f61a42a1c" prot="public" static="no" mutable="no">
+        <type>struct gpiod_line *</type>
+        <definition>struct gpiod_line* MotorGPIOD::ms2</definition>
+        <argsstring></argsstring>
+        <name>ms2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MS2 gpiod_line </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="47" column="21" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1a941998517a563ddd07379d25965a53e9" prot="public" static="no" mutable="no">
+        <type>struct gpiod_line *</type>
+        <definition>struct gpiod_line* MotorGPIOD::ms3</definition>
+        <argsstring></argsstring>
+        <name>ms3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MS3 gpiod_line </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="48" column="21" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1a78b1a39f8f4b6ea5ec7e9590a6acd1b5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MotorGPIOD::stpState</definition>
+        <argsstring></argsstring>
+        <name>stpState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>STP state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="49" column="10" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1a493619e15c49fb53d12f56d75980bb6d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MotorGPIOD::dirState</definition>
+        <argsstring></argsstring>
+        <name>dirState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DIR state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="50" column="10" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1ac3cdccf7cb5feeb1aef2c1580898fc76" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MotorGPIOD::ms1State</definition>
+        <argsstring></argsstring>
+        <name>ms1State</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MS1 state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="51" column="10" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1a7ffba22b1094dd9d03b9d9b339131482" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MotorGPIOD::ms2State</definition>
+        <argsstring></argsstring>
+        <name>ms2State</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MS2 state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="52" column="10" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_g_p_i_o_d_1a6457ec87db3a012d6286bfab5bbf09e5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MotorGPIOD::ms3State</definition>
+        <argsstring></argsstring>
+        <name>ms3State</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>MS3 state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="53" column="10" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A struct containing motor GPIOD line pointers and state. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" line="43" column="1" bodyfile="/Users/helkebir/Documents/Academics/AY2020-2021/Bentsman Research/CNC Control/C code/ccnc.h" bodystart="43" bodyend="54"/>
+    <listofallmembers>
+      <member refid="struct_motor_g_p_i_o_d_1a860138758afb1dd248c2b34f252d99bb" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>dir</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1a493619e15c49fb53d12f56d75980bb6d" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>dirState</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1adf3d20f609fa9cd433d06f9e90480216" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>ms1</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1ac3cdccf7cb5feeb1aef2c1580898fc76" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>ms1State</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1a4bd8b32e7f01a5b5e475673f61a42a1c" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>ms2</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1a7ffba22b1094dd9d03b9d9b339131482" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>ms2State</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1a941998517a563ddd07379d25965a53e9" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>ms3</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1a6457ec87db3a012d6286bfab5bbf09e5" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>ms3State</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1a753b056c02eede2971427727d5889ef5" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>stp</name></member>
+      <member refid="struct_motor_g_p_i_o_d_1a78b1a39f8f4b6ea5ec7e9590a6acd1b5" prot="public" virt="non-virtual"><scope>MotorGPIOD</scope><name>stpState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

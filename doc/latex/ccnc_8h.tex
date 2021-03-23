@@ -1,0 +1,379 @@
+\hypertarget{ccnc_8h}{}\doxysection{/\+Users/helkebir/\+Documents/\+Academics/\+A\+Y2020-\/2021/\+Bentsman Research/\+C\+NC Control/C code/ccnc.h File Reference}
+\label{ccnc_8h}\index{/Users/helkebir/Documents/Academics/AY2020-\/2021/Bentsman Research/CNC Control/C code/ccnc.h@{/Users/helkebir/Documents/Academics/AY2020-\/2021/Bentsman Research/CNC Control/C code/ccnc.h}}
+{\ttfamily \#include $<$gpiod.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_motor_pins}{Motor\+Pins}}
+\begin{DoxyCompactList}\small\item\em A struct containing motor pin numbers. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}}
+\begin{DoxyCompactList}\small\item\em A struct containing motor G\+P\+I\+OD line pointers and state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ccnc_8h_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}~5
+\item 
+\#define \mbox{\hyperlink{ccnc_8h_a73c52f3e083ffd8acde0b01f74de7a5a}{C\+O\+M\+M\+A\+N\+D\+\_\+\+L\+E\+N\+G\+TH}}~3
+\begin{DoxyCompactList}\small\item\em Number of subcommands in a command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ccnc_8h_a1ab814c18383f3c971253e396e663fb7}{init\+Motor}} (struct \mbox{\hyperlink{struct_motor_pins}{Motor\+Pins}} $\ast$motor\+Pins, struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$motor\+G\+P\+I\+OD, struct gpiod\+\_\+chip $\ast$chip)
+\begin{DoxyCompactList}\small\item\em Initializes a A4988-\/style motor driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ccnc_8h_afcce7d1521597fe033e70a6c07df0df5}{release\+Motor}} (struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$motor\+G\+P\+I\+OD)
+\begin{DoxyCompactList}\small\item\em Safety releases all G\+P\+I\+OD connections for a given motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ccnc_8h_ab063ff83fc42816c13dd0b4b2da75a7c}{prepare\+Subcommand}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} scmd, struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$motor\+G\+P\+I\+OD)
+\begin{DoxyCompactList}\small\item\em Prepares pin states for a subcommand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ccnc_8h_aa2c424555e60105489ba1a88bff35d8f}{execute\+Subcommand}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} scmd, struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$motor\+G\+P\+I\+OD, \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} wait)
+\begin{DoxyCompactList}\small\item\em Executes a subcommand with a specified wait time between step pin high and low. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ccnc_8h_aadbb53306b223d75b33eb606f05819ed}{execute\+Subcommands\+On\+Motors}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} scmds\mbox{[}$\,$\mbox{]}, struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$motor\+G\+P\+I\+O\+Ds\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} wait, \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} number)
+\begin{DoxyCompactList}\small\item\em Executes multiple subcommands on multiple motors (one per motor). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ccnc_8h_a77e8fa224b5fb18b4b2334f49d607a8e}{run\+Scmd}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} scmd, \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} wait, struct gpiod\+\_\+line $\ast$stp, struct gpiod\+\_\+line $\ast$dir, struct gpiod\+\_\+line $\ast$ms1, struct gpiod\+\_\+line $\ast$ms2, struct gpiod\+\_\+line $\ast$ms3)
+\begin{DoxyCompactList}\small\item\em Execute a subcommand by manually supplying G\+P\+I\+OD lines. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ccnc_8h_ad81d88ec29f019dcfc23c8cbb989ed1e}{run\+Scmd\+From\+Array}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} scmd\mbox{[}5\mbox{]}, \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} wait, struct gpiod\+\_\+line $\ast$stp, struct gpiod\+\_\+line $\ast$dir, struct gpiod\+\_\+line $\ast$ms1, struct gpiod\+\_\+line $\ast$ms2, struct gpiod\+\_\+line $\ast$ms3)
+\begin{DoxyCompactList}\small\item\em Execute a subcommand from an array by manually supplying G\+P\+I\+OD lines. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{ccnc_8h_a132245808027c6679bf46c61f802a0a3}{parity}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i)
+\begin{DoxyCompactList}\small\item\em Computes integer parity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{ccnc_8h_ada81bdeec91ff5f283e886401f9c9887}{add\+Parity\+Bit}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i)
+\begin{DoxyCompactList}\small\item\em Prepends parity bit to an integer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ccnc_8h_ad249f9a8cb431cc966c2f71f124b0633}{check\+Parity}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} i, \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} parity\+Bit)
+\begin{DoxyCompactList}\small\item\em Checks if parity bit is properly set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{ccnc_8h_ad0c15d03fbe73823faf9876e480b3271}{concatenate\+Subcommands}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} scmd0, \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} scmd1)
+\begin{DoxyCompactList}\small\item\em Concatenates two subcommands. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} $\ast$ \mbox{\hyperlink{ccnc_8h_a4802f908d12718480e865c9f0ed67db2}{deconstruct\+Command}} (\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} cmd)
+\begin{DoxyCompactList}\small\item\em Deconstructs command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ccnc_8h_aee9a6cc3c441673a8c0d73eae36d7128}{demo\+Motors}} (struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$x\+Motor, struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$y\+Motor, struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$z\+Motor)
+\begin{DoxyCompactList}\small\item\em A small motor demo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main C\+C\+NC functions. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ccnc_8h_a6b20d41d6252e9871430c242cb1a56e7}\label{ccnc_8h_a6b20d41d6252e9871430c242cb1a56e7}} 
+\index{ccnc.h@{ccnc.h}!BUFFER\_SIZE@{BUFFER\_SIZE}}
+\index{BUFFER\_SIZE@{BUFFER\_SIZE}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_SIZE}{BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE~5}
+
+Character buffer size for stdin input. \mbox{\Hypertarget{ccnc_8h_a73c52f3e083ffd8acde0b01f74de7a5a}\label{ccnc_8h_a73c52f3e083ffd8acde0b01f74de7a5a}} 
+\index{ccnc.h@{ccnc.h}!COMMAND\_LENGTH@{COMMAND\_LENGTH}}
+\index{COMMAND\_LENGTH@{COMMAND\_LENGTH}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_LENGTH}{COMMAND\_LENGTH}}
+{\footnotesize\ttfamily \#define C\+O\+M\+M\+A\+N\+D\+\_\+\+L\+E\+N\+G\+TH~3}
+
+
+
+Number of subcommands in a command. 
+
+Normally equals number of controlled motors. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}\label{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}} 
+\index{ccnc.h@{ccnc.h}!uint@{uint}}
+\index{uint@{uint}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{uint}{uint}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}
+
+Shorthand for unsigned integer. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ccnc_8h_ada81bdeec91ff5f283e886401f9c9887}\label{ccnc_8h_ada81bdeec91ff5f283e886401f9c9887}} 
+\index{ccnc.h@{ccnc.h}!addParityBit@{addParityBit}}
+\index{addParityBit@{addParityBit}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{addParityBit()}{addParityBit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} add\+Parity\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i }\end{DoxyParamCaption})}
+
+
+
+Prepends parity bit to an integer. 
+
+Parity bit is added at address 0 (LE).
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Integer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer with prepended parity bit. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ccnc_8h_ad249f9a8cb431cc966c2f71f124b0633}\label{ccnc_8h_ad249f9a8cb431cc966c2f71f124b0633}} 
+\index{ccnc.h@{ccnc.h}!checkParity@{checkParity}}
+\index{checkParity@{checkParity}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{checkParity()}{checkParity()}}
+{\footnotesize\ttfamily bool check\+Parity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i,  }\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{parity\+Bit }\end{DoxyParamCaption})}
+
+
+
+Checks if parity bit is properly set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Integer to be checked. \\
+\hline
+{\em parity\+Bit} & Supposed parity bit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if parity matches parity bit, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ccnc_8h_ad0c15d03fbe73823faf9876e480b3271}\label{ccnc_8h_ad0c15d03fbe73823faf9876e480b3271}} 
+\index{ccnc.h@{ccnc.h}!concatenateSubcommands@{concatenateSubcommands}}
+\index{concatenateSubcommands@{concatenateSubcommands}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{concatenateSubcommands()}{concatenateSubcommands()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} concatenate\+Subcommands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{scmd0,  }\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{scmd1 }\end{DoxyParamCaption})}
+
+
+
+Concatenates two subcommands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scmd0} & First subcommand. \\
+\hline
+{\em scmd1} & Second subcommand.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Concatenated subcommands. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ccnc_8h_a4802f908d12718480e865c9f0ed67db2}\label{ccnc_8h_a4802f908d12718480e865c9f0ed67db2}} 
+\index{ccnc.h@{ccnc.h}!deconstructCommand@{deconstructCommand}}
+\index{deconstructCommand@{deconstructCommand}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{deconstructCommand()}{deconstructCommand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}$\ast$ deconstruct\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Deconstructs command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & Command to be deconstructed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of length \mbox{\hyperlink{ccnc_8h_a73c52f3e083ffd8acde0b01f74de7a5a}{C\+O\+M\+M\+A\+N\+D\+\_\+\+L\+E\+N\+G\+TH}} containing all consituent subcommands. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ccnc_8h_aee9a6cc3c441673a8c0d73eae36d7128}\label{ccnc_8h_aee9a6cc3c441673a8c0d73eae36d7128}} 
+\index{ccnc.h@{ccnc.h}!demoMotors@{demoMotors}}
+\index{demoMotors@{demoMotors}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{demoMotors()}{demoMotors()}}
+{\footnotesize\ttfamily void demo\+Motors (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$}]{x\+Motor,  }\item[{struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$}]{y\+Motor,  }\item[{struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$}]{z\+Motor }\end{DoxyParamCaption})}
+
+
+
+A small motor demo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Motor} & A pointer to the x-\/axis \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} instance. \\
+\hline
+{\em y\+Motor} & A pointer to the y-\/axis \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} instance. \\
+\hline
+{\em z\+Motor} & A pointer to the z-\/axis \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ccnc_8h_aa2c424555e60105489ba1a88bff35d8f}\label{ccnc_8h_aa2c424555e60105489ba1a88bff35d8f}} 
+\index{ccnc.h@{ccnc.h}!executeSubcommand@{executeSubcommand}}
+\index{executeSubcommand@{executeSubcommand}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{executeSubcommand()}{executeSubcommand()}}
+{\footnotesize\ttfamily void execute\+Subcommand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{scmd,  }\item[{struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$}]{motor\+G\+P\+I\+OD,  }\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{wait }\end{DoxyParamCaption})}
+
+
+
+Executes a subcommand with a specified wait time between step pin high and low. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ccnc_8h_ab063ff83fc42816c13dd0b4b2da75a7c}{prepare\+Subcommand}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em scmd} & A 5-\/bit subcommand. \\
+\hline
+{\em motor\+G\+P\+I\+OD} & Pointer to the \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} instance. \\
+\hline
+{\em wait} & Wait time in microseconds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ccnc_8h_aadbb53306b223d75b33eb606f05819ed}\label{ccnc_8h_aadbb53306b223d75b33eb606f05819ed}} 
+\index{ccnc.h@{ccnc.h}!executeSubcommandsOnMotors@{executeSubcommandsOnMotors}}
+\index{executeSubcommandsOnMotors@{executeSubcommandsOnMotors}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{executeSubcommandsOnMotors()}{executeSubcommandsOnMotors()}}
+{\footnotesize\ttfamily void execute\+Subcommands\+On\+Motors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{scmds\mbox{[}$\,$\mbox{]},  }\item[{struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$}]{motor\+G\+P\+I\+O\+Ds\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{wait,  }\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{number }\end{DoxyParamCaption})}
+
+
+
+Executes multiple subcommands on multiple motors (one per motor). 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ccnc_8h_aa2c424555e60105489ba1a88bff35d8f}{execute\+Subcommand}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em scmds} & An array of 5-\/bit subcommands. \\
+\hline
+{\em motor\+G\+P\+I\+O\+Ds} & An array of pointers to \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} instances. \\
+\hline
+{\em wait} & Wait time in microseconds. \\
+\hline
+{\em number} & Number of motors to be commanded. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ccnc_8h_a1ab814c18383f3c971253e396e663fb7}\label{ccnc_8h_a1ab814c18383f3c971253e396e663fb7}} 
+\index{ccnc.h@{ccnc.h}!initMotor@{initMotor}}
+\index{initMotor@{initMotor}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{initMotor()}{initMotor()}}
+{\footnotesize\ttfamily void init\+Motor (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_motor_pins}{Motor\+Pins}} $\ast$}]{motor\+Pins,  }\item[{struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$}]{motor\+G\+P\+I\+OD,  }\item[{struct gpiod\+\_\+chip $\ast$}]{chip }\end{DoxyParamCaption})}
+
+
+
+Initializes a A4988-\/style motor driver. 
+
+Calls G\+P\+I\+OD and request pin output access as the \char`\"{}cnccontroller\char`\"{} consumer. Initial pin values are set to low.
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+Pins} & Motor driver G\+P\+IO pins. \\
+\hline
+{\em motor\+G\+P\+I\+OD} & Uninitialized pointer to a \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} instance that is to be populated. \\
+\hline
+{\em chip} & Pointer to the G\+P\+I\+OD chip. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ccnc_8h_a132245808027c6679bf46c61f802a0a3}\label{ccnc_8h_a132245808027c6679bf46c61f802a0a3}} 
+\index{ccnc.h@{ccnc.h}!parity@{parity}}
+\index{parity@{parity}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{parity()}{parity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} parity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{i }\end{DoxyParamCaption})}
+
+
+
+Computes integer parity. 
+
+If even returns 1, 0 otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Integer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ccnc_8h_ab063ff83fc42816c13dd0b4b2da75a7c}\label{ccnc_8h_ab063ff83fc42816c13dd0b4b2da75a7c}} 
+\index{ccnc.h@{ccnc.h}!prepareSubcommand@{prepareSubcommand}}
+\index{prepareSubcommand@{prepareSubcommand}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{prepareSubcommand()}{prepareSubcommand()}}
+{\footnotesize\ttfamily void prepare\+Subcommand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{scmd,  }\item[{struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$}]{motor\+G\+P\+I\+OD }\end{DoxyParamCaption})}
+
+
+
+Prepares pin states for a subcommand. 
+
+A subcommand is a 5-\/bit value with the following build-\/up\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Address (LE) }&\cellcolor{\tableheadbgcolor}\textbf{ Abbreviation }&\cellcolor{\tableheadbgcolor}\textbf{ Meaning  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Address (LE) }&\cellcolor{\tableheadbgcolor}\textbf{ Abbreviation }&\cellcolor{\tableheadbgcolor}\textbf{ Meaning  }\\\cline{1-3}
+\endhead
+0 &M\+S3 &Microstep 3  \\\cline{1-3}
+1 &M\+S2 &Microstep 2  \\\cline{1-3}
+2 &M\+S1 &Microstep 1  \\\cline{1-3}
+3 &D\+IR &Direction  \\\cline{1-3}
+4 &E\+NA &Enable  \\\cline{1-3}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em scmd} & A 5-\/bit subcommand. \\
+\hline
+{\em motor\+G\+P\+I\+OD} & Pointer to the \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ccnc_8h_afcce7d1521597fe033e70a6c07df0df5}\label{ccnc_8h_afcce7d1521597fe033e70a6c07df0df5}} 
+\index{ccnc.h@{ccnc.h}!releaseMotor@{releaseMotor}}
+\index{releaseMotor@{releaseMotor}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{releaseMotor()}{releaseMotor()}}
+{\footnotesize\ttfamily void release\+Motor (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} $\ast$}]{motor\+G\+P\+I\+OD }\end{DoxyParamCaption})}
+
+
+
+Safety releases all G\+P\+I\+OD connections for a given motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+G\+P\+I\+OD} & Pointer to the \mbox{\hyperlink{struct_motor_g_p_i_o_d}{Motor\+G\+P\+I\+OD}} instance to be released. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ccnc_8h_a77e8fa224b5fb18b4b2334f49d607a8e}\label{ccnc_8h_a77e8fa224b5fb18b4b2334f49d607a8e}} 
+\index{ccnc.h@{ccnc.h}!runScmd@{runScmd}}
+\index{runScmd@{runScmd}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{runScmd()}{runScmd()}}
+{\footnotesize\ttfamily void run\+Scmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{scmd,  }\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{wait,  }\item[{struct gpiod\+\_\+line $\ast$}]{stp,  }\item[{struct gpiod\+\_\+line $\ast$}]{dir,  }\item[{struct gpiod\+\_\+line $\ast$}]{ms1,  }\item[{struct gpiod\+\_\+line $\ast$}]{ms2,  }\item[{struct gpiod\+\_\+line $\ast$}]{ms3 }\end{DoxyParamCaption})}
+
+
+
+Execute a subcommand by manually supplying G\+P\+I\+OD lines. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Superceded by \mbox{\hyperlink{ccnc_8h_aa2c424555e60105489ba1a88bff35d8f}{execute\+Subcommand()}}. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em scmd} & A 5-\/bit subcommand. \\
+\hline
+{\em wait} & Wait time in microseconds. \\
+\hline
+{\em stp} & Pointer to the S\+TP gpiod\+\_\+line. \\
+\hline
+{\em dir} & Pointer to the D\+IR gpiod\+\_\+line. \\
+\hline
+{\em ms1} & Pointer to the M\+S1 gpiod\+\_\+line. \\
+\hline
+{\em ms2} & Pointer to the M\+S2 gpiod\+\_\+line. \\
+\hline
+{\em ms3} & Pointer to the M\+S3 gpiod\+\_\+line. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ccnc_8h_ad81d88ec29f019dcfc23c8cbb989ed1e}\label{ccnc_8h_ad81d88ec29f019dcfc23c8cbb989ed1e}} 
+\index{ccnc.h@{ccnc.h}!runScmdFromArray@{runScmdFromArray}}
+\index{runScmdFromArray@{runScmdFromArray}!ccnc.h@{ccnc.h}}
+\doxysubsubsection{\texorpdfstring{runScmdFromArray()}{runScmdFromArray()}}
+{\footnotesize\ttfamily void run\+Scmd\+From\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{scmd\mbox{[}5\mbox{]},  }\item[{\mbox{\hyperlink{ccnc_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{wait,  }\item[{struct gpiod\+\_\+line $\ast$}]{stp,  }\item[{struct gpiod\+\_\+line $\ast$}]{dir,  }\item[{struct gpiod\+\_\+line $\ast$}]{ms1,  }\item[{struct gpiod\+\_\+line $\ast$}]{ms2,  }\item[{struct gpiod\+\_\+line $\ast$}]{ms3 }\end{DoxyParamCaption})}
+
+
+
+Execute a subcommand from an array by manually supplying G\+P\+I\+OD lines. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]Superceded by \mbox{\hyperlink{ccnc_8h_aadbb53306b223d75b33eb606f05819ed}{execute\+Subcommands\+On\+Motors()}}. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em scmd} & An array of five integers. \\
+\hline
+{\em wait} & Wait time in microseconds. \\
+\hline
+{\em stp} & Pointer to the S\+TP gpiod\+\_\+line. \\
+\hline
+{\em dir} & Pointer to the D\+IR gpiod\+\_\+line. \\
+\hline
+{\em ms1} & Pointer to the M\+S1 gpiod\+\_\+line. \\
+\hline
+{\em ms2} & Pointer to the M\+S2 gpiod\+\_\+line. \\
+\hline
+{\em ms3} & Pointer to the M\+S3 gpiod\+\_\+line. \\
+\hline
+\end{DoxyParams}

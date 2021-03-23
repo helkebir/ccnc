@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="deprecated" kind="page">
+    <compoundname>deprecated</compoundname>
+    <title>Deprecated objects</title>
+    <briefdescription>
+<para>Deprecated objects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Deprecated objects.</para>
+<para>These objects risk deletion in later releases. Use at your own discretion.</para>
+<para><variablelist>
+<varlistentry><term>Member <ref refid="ccnc_8h_1a77e8fa224b5fb18b4b2334f49d607a8e" kindref="member">runScmd</ref>  (uint scmd, uint wait, struct gpiod_line *stp, struct gpiod_line *dir, struct gpiod_line *ms1, struct gpiod_line *ms2, struct gpiod_line *ms3)</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000001"/>Superceded by <ref refid="ccnc_8h_1aa2c424555e60105489ba1a88bff35d8f" kindref="member">executeSubcommand()</ref>.  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="ccnc_8h_1ad81d88ec29f019dcfc23c8cbb989ed1e" kindref="member">runScmdFromArray</ref>  (uint scmd[5], uint wait, struct gpiod_line *stp, struct gpiod_line *dir, struct gpiod_line *ms1, struct gpiod_line *ms2, struct gpiod_line *ms3)</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000002"/>Superceded by <ref refid="ccnc_8h_1aadbb53306b223d75b33eb606f05819ed" kindref="member">executeSubcommandsOnMotors()</ref>. </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

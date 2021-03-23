@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ccnc.h file | CCNC - C Computer Numerical Control</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">CCNC - C Computer Numerical Control</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Pages</a></li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          ccnc.h <span class="m-thin">file</span>
+        </h1>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#define-members">Defines</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Main CCNC functions.</p>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              struct <a href="struct_motor_pins.html" class="m-doc">MotorPins</a>
+            </dt>
+            <dd>A struct containing motor pin numbers.</dd>
+            <dt>
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>
+            </dt>
+            <dd>A struct containing motor GPIOD line pointers and state.</dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> = unsigned int
+            </dt>
+            <dd></dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1ab814c18383f3c971253e396e663fb7" class="m-doc">initMotor</a>(</span><span class="m-doc-wrap">struct <a href="struct_motor_pins.html" class="m-doc">MotorPins</a>* motorPins,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIOD,
+              struct gpiod_chip* chip)</span>
+            </dt>
+            <dd>Initializes a A4988-style motor driver.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#afcce7d1521597fe033e70a6c07df0df5" class="m-doc">releaseMotor</a>(</span><span class="m-doc-wrap">struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIOD)</span>
+            </dt>
+            <dd>Safety releases all GPIOD connections for a given motor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ab063ff83fc42816c13dd0b4b2da75a7c" class="m-doc">prepareSubcommand</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIOD)</span>
+            </dt>
+            <dd>Prepares pin states for a subcommand.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aa2c424555e60105489ba1a88bff35d8f" class="m-doc">executeSubcommand</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIOD,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> wait)</span>
+            </dt>
+            <dd>Executes a subcommand with a specified wait time between step pin high and low.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aadbb53306b223d75b33eb606f05819ed" class="m-doc">executeSubcommandsOnMotors</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmds[],
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIODs[],
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> wait,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> number)</span>
+            </dt>
+            <dd>Executes multiple subcommands on multiple motors (one per motor).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a77e8fa224b5fb18b4b2334f49d607a8e" class="m-doc">runScmd</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> wait,
+              struct gpiod_line* stp,
+              struct gpiod_line* dir,
+              struct gpiod_line* ms1,
+              struct gpiod_line* ms2,
+              struct gpiod_line* ms3) <span class="m-label m-danger">deprecated</span></span>
+            </dt>
+            <dd>Execute a subcommand by manually supplying GPIOD lines.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad81d88ec29f019dcfc23c8cbb989ed1e" class="m-doc">runScmdFromArray</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd[5],
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> wait,
+              struct gpiod_line* stp,
+              struct gpiod_line* dir,
+              struct gpiod_line* ms1,
+              struct gpiod_line* ms2,
+              struct gpiod_line* ms3) <span class="m-label m-danger">deprecated</span></span>
+            </dt>
+            <dd>Execute a subcommand from an array by manually supplying GPIOD lines.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a132245808027c6679bf46c61f802a0a3" class="m-doc">parity</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> i) -&gt; <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a></span>
+            </dt>
+            <dd>Computes integer parity.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ada81bdeec91ff5f283e886401f9c9887" class="m-doc">addParityBit</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> i) -&gt; <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a></span>
+            </dt>
+            <dd>Prepends parity bit to an integer.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad249f9a8cb431cc966c2f71f124b0633" class="m-doc">checkParity</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> i,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> parityBit) -&gt; bool</span>
+            </dt>
+            <dd>Checks if parity bit is properly set.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0c15d03fbe73823faf9876e480b3271" class="m-doc">concatenateSubcommands</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd0,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd1) -&gt; <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a></span>
+            </dt>
+            <dd>Concatenates two subcommands.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4802f908d12718480e865c9f0ed67db2" class="m-doc">deconstructCommand</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> cmd) -&gt; <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a>*</span>
+            </dt>
+            <dd>Deconstructs command.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aee9a6cc3c441673a8c0d73eae36d7128" class="m-doc">demoMotors</a>(</span><span class="m-doc-wrap">struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* xMotor,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* yMotor,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* zMotor)</span>
+            </dt>
+            <dd>A small motor demo.</dd>
+          </dl>
+        </section>
+        <section id="define-members">
+          <h2><a href="#define-members">Defines</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">#define <a href="#a6b20d41d6252e9871430c242cb1a56e7" class="m-doc">BUFFER_SIZE</a></span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">#define <a href="#a73c52f3e083ffd8acde0b01f74de7a5a" class="m-doc">COMMAND_LENGTH</a></span>
+            </dt>
+            <dd>Number of subcommands in a command.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="a91ad9478d81a7aaf2593e8d9c3d06a14"><div>
+            <h3>
+              typedef unsigned int <a href="#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc-self">uint</a>
+            </h3>
+<p>Shorthand for unsigned integer.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a1ab814c18383f3c971253e396e663fb7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ab814c18383f3c971253e396e663fb7" class="m-doc-self">initMotor</a>(</span><span class="m-doc-wrap">struct <a href="struct_motor_pins.html" class="m-doc">MotorPins</a>* motorPins,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIOD,
+              struct gpiod_chip* chip)</span></span>
+            </h3>
+            <p>Initializes a A4988-style motor driver.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">motorPins</td>
+                  <td>Motor driver GPIO pins.</td>
+                </tr>
+                <tr>
+                  <td>motorGPIOD</td>
+                  <td>Uninitialized pointer to a <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a> instance that is to be populated.</td>
+                </tr>
+                <tr>
+                  <td>chip</td>
+                  <td>Pointer to the GPIOD chip.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Calls GPIOD and request pin output access as the &quot;cnccontroller&quot; consumer. Initial pin values are set to low.</p>
+          </div></section>
+          <section class="m-doc-details" id="afcce7d1521597fe033e70a6c07df0df5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afcce7d1521597fe033e70a6c07df0df5" class="m-doc-self">releaseMotor</a>(</span><span class="m-doc-wrap">struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIOD)</span></span>
+            </h3>
+            <p>Safety releases all GPIOD connections for a given motor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">motorGPIOD</td>
+                  <td>Pointer to the <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a> instance to be released.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab063ff83fc42816c13dd0b4b2da75a7c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab063ff83fc42816c13dd0b4b2da75a7c" class="m-doc-self">prepareSubcommand</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIOD)</span></span>
+            </h3>
+            <p>Prepares pin states for a subcommand.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">scmd</td>
+                  <td>A 5-bit subcommand.</td>
+                </tr>
+                <tr>
+                  <td>motorGPIOD</td>
+                  <td>Pointer to the <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a> instance.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>A subcommand is a 5-bit value with the following build-up:</p><table class="m-table"><thead><tr><th>Address (LE)</th><th>Abbreviation</th><th>Meaning</th></tr></thead><tbody><tr><td>0</td><td>MS3</td><td>Microstep 3</td></tr><tr><td>1</td><td>MS2</td><td>Microstep 2</td></tr><tr><td>2</td><td>MS1</td><td>Microstep 1</td></tr><tr><td>3</td><td>DIR</td><td>Direction</td></tr><tr><td>4</td><td>ENA</td><td>Enable</td></tr></tbody></table>
+          </div></section>
+          <section class="m-doc-details" id="aa2c424555e60105489ba1a88bff35d8f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa2c424555e60105489ba1a88bff35d8f" class="m-doc-self">executeSubcommand</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIOD,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> wait)</span></span>
+            </h3>
+            <p>Executes a subcommand with a specified wait time between step pin high and low.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">scmd</td>
+                  <td>A 5-bit subcommand.</td>
+                </tr>
+                <tr>
+                  <td>motorGPIOD</td>
+                  <td>Pointer to the <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a> instance.</td>
+                </tr>
+                <tr>
+                  <td>wait</td>
+                  <td>Wait time in microseconds.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="ccnc_8h.html#ab063ff83fc42816c13dd0b4b2da75a7c" class="m-doc">prepareSubcommand</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="aadbb53306b223d75b33eb606f05819ed"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aadbb53306b223d75b33eb606f05819ed" class="m-doc-self">executeSubcommandsOnMotors</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmds[],
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* motorGPIODs[],
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> wait,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> number)</span></span>
+            </h3>
+            <p>Executes multiple subcommands on multiple motors (one per motor).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">scmds</td>
+                  <td>An array of 5-bit subcommands.</td>
+                </tr>
+                <tr>
+                  <td>motorGPIODs</td>
+                  <td>An array of pointers to <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a> instances.</td>
+                </tr>
+                <tr>
+                  <td>wait</td>
+                  <td>Wait time in microseconds.</td>
+                </tr>
+                <tr>
+                  <td>number</td>
+                  <td>Number of motors to be commanded.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="ccnc_8h.html#aa2c424555e60105489ba1a88bff35d8f" class="m-doc">executeSubcommand</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a77e8fa224b5fb18b4b2334f49d607a8e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a77e8fa224b5fb18b4b2334f49d607a8e" class="m-doc-self">runScmd</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> wait,
+              struct gpiod_line* stp,
+              struct gpiod_line* dir,
+              struct gpiod_line* ms1,
+              struct gpiod_line* ms2,
+              struct gpiod_line* ms3)</span></span>
+            </h3>
+            <p>Execute a subcommand by manually supplying GPIOD lines.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">scmd</td>
+                  <td>A 5-bit subcommand.</td>
+                </tr>
+                <tr>
+                  <td>wait</td>
+                  <td>Wait time in microseconds.</td>
+                </tr>
+                <tr>
+                  <td>stp</td>
+                  <td>Pointer to the STP gpiod_line.</td>
+                </tr>
+                <tr>
+                  <td>dir</td>
+                  <td>Pointer to the DIR gpiod_line.</td>
+                </tr>
+                <tr>
+                  <td>ms1</td>
+                  <td>Pointer to the MS1 gpiod_line.</td>
+                </tr>
+                <tr>
+                  <td>ms2</td>
+                  <td>Pointer to the MS2 gpiod_line.</td>
+                </tr>
+                <tr>
+                  <td>ms3</td>
+                  <td>Pointer to the MS3 gpiod_line.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-danger"><h4><a href="deprecated.html#_deprecated000001" class="m-doc">Deprecated</a></h4><p>Superceded by <a href="ccnc_8h.html#aa2c424555e60105489ba1a88bff35d8f" class="m-doc">executeSubcommand()</a>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="ad81d88ec29f019dcfc23c8cbb989ed1e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad81d88ec29f019dcfc23c8cbb989ed1e" class="m-doc-self">runScmdFromArray</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd[5],
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> wait,
+              struct gpiod_line* stp,
+              struct gpiod_line* dir,
+              struct gpiod_line* ms1,
+              struct gpiod_line* ms2,
+              struct gpiod_line* ms3)</span></span>
+            </h3>
+            <p>Execute a subcommand from an array by manually supplying GPIOD lines.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">scmd</td>
+                  <td>An array of five integers.</td>
+                </tr>
+                <tr>
+                  <td>wait</td>
+                  <td>Wait time in microseconds.</td>
+                </tr>
+                <tr>
+                  <td>stp</td>
+                  <td>Pointer to the STP gpiod_line.</td>
+                </tr>
+                <tr>
+                  <td>dir</td>
+                  <td>Pointer to the DIR gpiod_line.</td>
+                </tr>
+                <tr>
+                  <td>ms1</td>
+                  <td>Pointer to the MS1 gpiod_line.</td>
+                </tr>
+                <tr>
+                  <td>ms2</td>
+                  <td>Pointer to the MS2 gpiod_line.</td>
+                </tr>
+                <tr>
+                  <td>ms3</td>
+                  <td>Pointer to the MS3 gpiod_line.</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-danger"><h4><a href="deprecated.html#_deprecated000002" class="m-doc">Deprecated</a></h4><p>Superceded by <a href="ccnc_8h.html#aadbb53306b223d75b33eb606f05819ed" class="m-doc">executeSubcommandsOnMotors()</a>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a132245808027c6679bf46c61f802a0a3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a132245808027c6679bf46c61f802a0a3" class="m-doc-self">parity</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> i)</span></span>
+            </h3>
+            <p>Computes integer parity.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">i</td>
+                  <td>Integer.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Parity.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If even returns 1, 0 otherwise.</p>
+          </div></section>
+          <section class="m-doc-details" id="ada81bdeec91ff5f283e886401f9c9887"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada81bdeec91ff5f283e886401f9c9887" class="m-doc-self">addParityBit</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> i)</span></span>
+            </h3>
+            <p>Prepends parity bit to an integer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">i</td>
+                  <td>Integer.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Integer with prepended parity bit.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Parity bit is added at address 0 (LE).</p>
+          </div></section>
+          <section class="m-doc-details" id="ad249f9a8cb431cc966c2f71f124b0633"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad249f9a8cb431cc966c2f71f124b0633" class="m-doc-self">checkParity</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> i,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> parityBit)</span></span>
+            </h3>
+            <p>Checks if parity bit is properly set.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">i</td>
+                  <td>Integer to be checked.</td>
+                </tr>
+                <tr>
+                  <td>parityBit</td>
+                  <td>Supposed parity bit.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if parity matches parity bit, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad0c15d03fbe73823faf9876e480b3271"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad0c15d03fbe73823faf9876e480b3271" class="m-doc-self">concatenateSubcommands</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd0,
+              <a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> scmd1)</span></span>
+            </h3>
+            <p>Concatenates two subcommands.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">scmd0</td>
+                  <td>First subcommand.</td>
+                </tr>
+                <tr>
+                  <td>scmd1</td>
+                  <td>Second subcommand.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Concatenated subcommands.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4802f908d12718480e865c9f0ed67db2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a>* </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4802f908d12718480e865c9f0ed67db2" class="m-doc-self">deconstructCommand</a>(</span><span class="m-doc-wrap"><a href="ccnc_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14" class="m-doc">uint</a> cmd)</span></span>
+            </h3>
+            <p>Deconstructs command.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">cmd</td>
+                  <td>Command to be deconstructed.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Array of length <a href="ccnc_8h.html#a73c52f3e083ffd8acde0b01f74de7a5a" class="m-doc">COMMAND_<wbr />LENGTH</a> containing all consituent subcommands.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aee9a6cc3c441673a8c0d73eae36d7128"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee9a6cc3c441673a8c0d73eae36d7128" class="m-doc-self">demoMotors</a>(</span><span class="m-doc-wrap">struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* xMotor,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* yMotor,
+              struct <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a>* zMotor)</span></span>
+            </h3>
+            <p>A small motor demo.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">xMotor</td>
+                  <td>A pointer to the x-axis <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a> instance.</td>
+                </tr>
+                <tr>
+                  <td>yMotor</td>
+                  <td>A pointer to the y-axis <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a> instance.</td>
+                </tr>
+                <tr>
+                  <td>zMotor</td>
+                  <td>A pointer to the z-axis <a href="struct_motor_g_p_i_o_d.html" class="m-doc">MotorGPIOD</a> instance.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
+        <section>
+          <h2>Define documentation</h2>
+          <section class="m-doc-details" id="a6b20d41d6252e9871430c242cb1a56e7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">#define <a href="#a6b20d41d6252e9871430c242cb1a56e7" class="m-doc-self">BUFFER_SIZE</a></span>
+            </h3>
+<p>Character buffer size for stdin input.</p>
+          </div></section>
+          <section class="m-doc-details" id="a73c52f3e083ffd8acde0b01f74de7a5a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">#define <a href="#a73c52f3e083ffd8acde0b01f74de7a5a" class="m-doc-self">COMMAND_LENGTH</a></span>
+            </h3>
+            <p>Number of subcommands in a command.</p>
+<p>Normally equals number of controlled motors.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>CCNC - C Computer Numerical Control. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
